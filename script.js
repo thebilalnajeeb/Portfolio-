@@ -1,10 +1,13 @@
 // 1. Loading Screen Logic (Preloader)
-window.addEventListener('load', () => {
-    // Waits 2.5 seconds for the "Fly to eye" animation to finish, then removes the overlay
+// Start the timer immediately instead of waiting for slow internet connections
+setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0'; // Fades out smoothly to reveal the site
     setTimeout(() => {
-        document.getElementById('preloader').style.display = 'none';
-    }, 2500); 
-});
+        preloader.style.display = 'none'; // Completely removes the black screen
+    }, 500);
+}, 2500); 
+
 
 // 2. Scroll Reveal Animation Logic
 const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };

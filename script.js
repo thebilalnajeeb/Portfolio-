@@ -1,15 +1,18 @@
-// 1. Scroll Reveal Animation Logic
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
+// 1. Loading Screen Logic (Preloader)
+window.addEventListener('load', () => {
+    // Waits 2.5 seconds for the "Fly to eye" animation to finish, then removes the overlay
+    setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+    }, 2500); 
+});
 
+// 2. Scroll Reveal Animation Logic
+const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            observer.unobserve(entry.target); // Only animate once
+            observer.unobserve(entry.target); 
         }
     });
 }, observerOptions);
@@ -18,7 +21,7 @@ document.querySelectorAll('.hidden').forEach((el) => {
     observer.observe(el);
 });
 
-// 2. Typewriter Effect Logic
+// 3. Typewriter Effect Logic
 const words = ["Data Science Student.", "Civil Engineer.", "Problem Solver."];
 let i = 0;
 let timer;
@@ -44,11 +47,7 @@ function deletingEffect() {
             word.pop();
             document.getElementById('typewriter').innerHTML = word.join("");
         } else {
-            if (words.length > (i + 1)) {
-                i++;
-            } else {
-                i = 0;
-            };
+            if (words.length > (i + 1)) { i++; } else { i = 0; };
             setTimeout(typingEffect, 500);
             return false;
         };
@@ -56,12 +55,11 @@ function deletingEffect() {
     };
     loopDeleting();
 };
-// Start typing effect on load
-typingEffect();
+typingEffect(); // Start effect
 
-// 3. Tab Switching Logic for Skills Section
+// 4. Tab Switching Logic for Skills
 function openTab(evt, tabName) {
-    var i, grid, tablinks;
+    let i, grid, tablinks;
     grid = document.getElementsByClassName("skills-grid");
     for (i = 0; i < grid.length; i++) {
         grid[i].style.display = "none";
@@ -73,60 +71,71 @@ function openTab(evt, tabName) {
     }
     document.getElementById(tabName).style.display = "grid";
     
-    // Re-trigger animations for the new tab
+    // Re-trigger scroll animations for the new tab
     let hiddenElements = document.getElementById(tabName).querySelectorAll('.hidden');
     hiddenElements.forEach(el => {
         el.classList.remove('show');
-        // Small timeout to allow the browser to register the removal before adding it back
-        setTimeout(() => {
-            el.classList.add('show');
-        }, 50);
+        setTimeout(() => { el.classList.add('show'); }, 50);
     });
 
     evt.currentTarget.className += " active";
 }
 
-// 4. Dark/Light Mode Theme Toggle Logic
-const themeBtn = document.getElementById('theme-toggle');
-if (themeBtn) {
-    const icon = themeBtn.querySelector('i');
-    themeBtn.addEventListener('click', () => {
-        if (document.body.getAttribute('data-theme') === 'light') {
-            document.body.removeAttribute('data-theme');
-            icon.className = 'fa-solid fa-sun';
-        } else {
-            document.body.setAttribute('data-theme', 'light');
-            icon.className = 'fa-solid fa-moon';
-        }
-    });
-}
-
-// 5. Back to Top Button Logic
+// 5. Back to Top Button
 let mybutton = document.getElementById("scrollTopBtn");
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
+window.onscroll = function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
     } else {
         mybutton.style.display = "none";
     }
-}
-
+};
 function topFunction() {
     document.body.scrollTop = 0; 
     document.documentElement.scrollTop = 0; 
 }
 
-// 6. Click Ripple Effect
-document.addEventListener('click', function(e) {
-    const ripple = document.createElement('div');
-    ripple.className = 'click-ripple';
-    ripple.style.left = e.clientX + 'px';
-    ripple.style.top = e.clientY + 'px';
-    document.body.appendChild(ripple);
-    
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
+// 6. MODAL SYSTEM LOGIC (Enlarging the Cards)
+const modal = document.getElementById('dataModal');
+const modalBody = document.getElementById('modalBody');
+const closeBtn = document.querySelector('.close-btn');
+
+document.querySelectorAll('.expandable-card').forEach(card => {
+    card.addEventListener('click', function() {
+        // 1. Clone the clicked card's HTML so we don't remove it from the main page
+        let clonedContent = this.cloneNode(true);
+        
+        // 2. Remove the extra padding/animations from the clone
+        clonedContent.classList.remove('delay-100', 'delay-200', 'delay-300');
+        
+        // 3. Get the extra details stored in the HTML data attribute
+        let extraDetails = this.getAttribute('data-details');
+        
+        // 4. Clear old modal content and add the new stuff
+        modalBody.innerHTML = '';
+        modalBody.appendChild(clonedContent);
+        
+        // 5. If there are extra details, create a new paragraph for them inside the modal
+        if (extraDetails) {
+            let detailDiv = document.createElement('div');
+            detailDiv.className = 'modal-details-text';
+            detailDiv.innerHTML = `<strong>>_ Extended Details:</strong><br><br>${extraDetails}`;
+            modalBody.appendChild(detailDiv);
+        }
+
+        // 6. Show the modal!
+        modal.classList.add('show');
+    });
 });
+
+// Close modal when X is clicked
+closeBtn.onclick = function() { 
+    modal.classList.remove('show'); 
+}
+
+// Close modal when clicking outside the box
+window.onclick = function(event) { 
+    if (event.target == modal) { 
+        modal.classList.remove('show'); 
+    } 
+}

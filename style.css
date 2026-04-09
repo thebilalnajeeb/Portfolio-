@@ -122,18 +122,61 @@ section { padding: 80px 0; }
 }
 .expandable-card:hover .expand-hint { opacity: 1; text-shadow: 0 0 5px var(--primary); }
 
-/* About Cards Fixed Layout */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-.about-img-wrapper { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-.about-img { width: 100%; border-radius: 15px; border: 1px solid var(--primary); filter: grayscale(100%) sepia(100%) hue-rotate(70deg) contrast(1.5); transition: 0.3s; object-fit: cover; aspect-ratio: 4/5; }
-.about-img:hover { filter: none; }
-.about-desc { font-size: 1.05rem; margin-bottom: 30px; }
-.about-card { padding: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; }
-.about-card h4 { font-size: 1.2rem; font-weight: 600; color: var(--text-main); margin-bottom: 5px; }
-.about-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
-.about-card i { font-size: 2.5rem; color: var(--primary); }
+/* --- ABOUT SECTION LAYOUT (MATCHING SKETCH) --- */
+.about-grid { 
+    display: grid; 
+    /* This creates the layout: 40% for the left picture, 60% for the right text/cards */
+    grid-template-columns: 4fr 6fr; 
+    gap: 50px; 
+    align-items: stretch; 
+}
+.about-img-wrapper { 
+    width: 100%; 
+    height: 100%; 
+}
+.about-img { 
+    width: 100%; 
+    height: 100%;
+    border-radius: 15px; 
+    border: 1px solid var(--primary); 
+    /* Keeps the cool Alienware green tint until hovered */
+    filter: grayscale(100%) sepia(100%) hue-rotate(70deg) contrast(1.2); 
+    transition: 0.3s; 
+    object-fit: cover; 
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+}
+.about-img:hover { 
+    filter: none; 
+    box-shadow: 0 0 35px rgba(57, 255, 20, 0.4); 
+}
+.about-info-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.about-desc { 
+    font-size: 1.1rem; 
+    margin-bottom: 30px; 
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+/* Forces the cards to be wide horizontal rectangles like your sketch */
+.about-card { 
+    padding: 25px; 
+    margin-bottom: 20px; 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+    width: 100%;
+}
+.about-card:last-child {
+    margin-bottom: 0; /* Keeps the bottom aligned with the picture */
+}
+.about-card h4 { font-size: 1.3rem; font-weight: 600; color: var(--text-main); margin-bottom: 5px; }
+.about-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.4; }
+.about-card i { font-size: 2.8rem; color: var(--primary); }
 
-/* Skills Cards */
+/* --- SKILLS SECTION --- */
 .tabs { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
 .tab-btn { background: transparent; border: 1px dashed var(--border-color); color: var(--text-muted); padding: 8px 25px; border-radius: 30px; transition: 0.3s; font-size: 1rem; font-weight: 500; }
 .tab-btn.active, .tab-btn:hover { background: rgba(57,255,20,0.1); border-color: var(--primary); color: var(--primary); text-shadow: 0 0 5px var(--primary); }
@@ -143,7 +186,7 @@ section { padding: 80px 0; }
 .skill-card i { font-size: 2.5rem; margin-bottom: 10px; color: var(--primary); }
 .skill-card h3 { font-size: 1.2rem; font-weight: 600; }
 
-/* Education Timeline Cards */
+/* --- EDUCATION TIMELINE CARDS --- */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 40px; border-left: 1px dashed var(--primary); }
 .timeline-item { margin-bottom: 50px; position: relative; }
 .timeline-dot { position: absolute; left: -46px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--primary); }
@@ -151,7 +194,7 @@ section { padding: 80px 0; }
 .timeline-card { padding: 20px; }
 .timeline-card h3 { font-size: 1.3rem; font-weight: 600; }
 
-/* Project/Experience Cards */
+/* --- PROJECT/EXPERIENCE CARDS --- */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 .project-card { display: flex; flex-direction: column; overflow: hidden; }
 .project-banner { height: 120px; background: rgba(57,255,20,0.05); display: flex; align-items: center; justify-content: center; color: rgba(57,255,20,0.3); font-size: 2.5rem; border-bottom: 1px dashed var(--border-color); }
@@ -215,8 +258,12 @@ section { padding: 80px 0; }
     .btn-outline { margin-left: 0; }
     
     .social-sidebar { display: none !important; }
-    .about-grid { grid-template-columns: 1fr; }
     .marquee-text { font-size: 1.5rem; }
+    
+    /* About Section Mobile Fixes */
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img { aspect-ratio: 4/3; height: auto; margin-bottom: 20px; }
+    .about-card { flex-direction: column; text-align: center; gap: 15px; }
     
     /* Mobile Menu Logic */
     .menu-toggle { display: block; }
@@ -228,4 +275,5 @@ section { padding: 80px 0; }
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
     .nav-links.active { left: 0; }
-}
+    }
+                            

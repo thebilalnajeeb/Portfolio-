@@ -6,12 +6,16 @@
     <title>Bilal Najeeb | Portfolio</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="preloader">
+        <h1 class="glitch-name">BILAL NAJEEB</h1>
+    </div>
 
     <nav>
         <div class="container nav-content">
@@ -25,15 +29,12 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <a href="#contact" class="btn btn-primary" style="margin-left: 20px;">Hire Me</a>
-                <button class="theme-btn" id="theme-toggle" title="Toggle Theme">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
             </div>
         </div>
     </nav>
 
     <div class="social-sidebar">
-        <a href="https://linkedin.com/in/bilalnajeeb" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://linkedin.com/in/thebilalnajeeb" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://t.me/thebilalnajeeb" target="_blank"><i class="fa-brands fa-telegram"></i></a>
         <a href="#"><i class="fa-brands fa-github"></i></a>
         <div class="social-line"></div>
@@ -43,15 +44,15 @@
 
     <div class="hero">
         <div class="container hidden">
-            <div class="badge">✨ Open to Data Science & Engineering Roles</div>
+            <div class="badge">✨ System Status: Open for Roles</div>
             <h1>Bilal <span class="gradient-text">Najeeb</span></h1>
-            <h2>> <span class="typewriter" id="typewriter"></span><span style="animation: blink 1s infinite">|</span></h2>
+            <h2>> <span class="typewriter" id="typewriter"></span><span style="animation: blink 1s infinite">_</span></h2>
             <p>
                 Bridging the gap between <strong>Civil Engineering</strong> and <strong>Data Science</strong>. 
                 I utilize my background in project planning, surveying, and management to build data-driven solutions.
             </p>
             <div>
-                <a href="https://1drv.ms/b/c/3941138d7b325c85/IQBYskzPAWlIQopWIXCIHjiDAX731H5NcZMNhP034np_PMg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download CV <i class="fa-solid fa-download"></i></a>
+                <a href="YOUR_DRIVE_LINK_HERE" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download CV <i class="fa-solid fa-download"></i></a>
                 <a href="#about" class="btn btn-outline">About Me <i class="fa-solid fa-user"></i></a>
             </div>
         </div>
@@ -68,7 +69,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="hidden">
-                    <img src="https://www.skyweaver.net/images/media/wallpapers/wallpaper2.jpg" alt="Bilal Najeeb" class="about-img" style="min-height: 400px; object-fit: cover; background: #2d1b4e;">
+                    <img src="profile.png" alt="Bilal Najeeb" class="about-img" style="min-height: 400px; object-fit: cover; background: #0a1a0f;">
                 </div>
                 <div>
                     <h2 class="section-title hidden" style="text-align: left;">About <span class="gradient-text">Me</span></h2>
@@ -78,19 +79,21 @@
                         My unique journey allows me to understand both the physical infrastructure of the world and the digital data that powers it.
                     </p>
                     
-                    <div class="about-card hidden delay-200">
+                    <div class="about-card expandable-card hidden delay-200" data-details="Extensive experience in building predictive models using Python, scikit-learn, and TensorFlow. Proficient in data wrangling, EDA, and visualizing insights. Familiar with SQL databases and API integration.">
                         <i class="fa-solid fa-layer-group"></i>
                         <div>
                             <h4>Full Stack Data Science</h4>
                             <p style="font-size: 0.85rem; color: var(--text-muted);">Python, Machine Learning, Data Analysis</p>
+                            <span class="expand-hint">[Click to Expand]</span>
                         </div>
                     </div>
                     
-                    <div class="about-card hidden delay-300">
+                    <div class="about-card expandable-card hidden delay-300" data-details="Managed large-scale civil projects from conception to completion. Expert in generating precise 2D/3D models in AutoCAD and Revit. Highly skilled in topographic surveying, QA/QC, and resource optimization.">
                         <i class="fa-solid fa-compass-drafting"></i>
                         <div>
                             <h4>Engineering & Planning</h4>
                             <p style="font-size: 0.85rem; color: var(--text-muted);">AutoCAD, Surveying, Cost Estimation</p>
+                            <span class="expand-hint">[Click to Expand]</span>
                         </div>
                     </div>
                 </div>
@@ -108,48 +111,56 @@
             </div>
 
             <div class="skills-grid active" id="ds">
-                <div class="skill-card hidden delay-100">
+                <div class="skill-card expandable-card hidden delay-100" data-details="Used for data analysis, automation, and backend development. Heavy experience with libraries like Pandas, NumPy, and Matplotlib to clean and visualize complex datasets.">
                     <i class="fa-brands fa-python"></i>
                     <h3>Python</h3>
                     <p>Advanced</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
-                <div class="skill-card hidden delay-200">
+                <div class="skill-card expandable-card hidden delay-200" data-details="Familiar with Classification, Regression, and Clustering algorithms. Experience with model tuning, training pipelines, and evaluation metrics.">
                     <i class="fa-solid fa-brain"></i>
                     <h3>Machine Learning</h3>
                     <p>Intermediate</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
-                <div class="skill-card hidden delay-300">
+                <div class="skill-card expandable-card hidden delay-300" data-details="Extracting hidden patterns from large structured and unstructured datasets. Academic focus on association rules, anomaly detection, and predictive modeling.">
                     <i class="fa-solid fa-database"></i>
                     <h3>Data Mining</h3>
                     <p>Academic Focus</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
-                <div class="skill-card hidden delay-100">
+                <div class="skill-card expandable-card hidden delay-100" data-details="Transforming raw data into actionable business intelligence using statistical methods and dynamic reporting tools.">
                     <i class="fa-solid fa-chart-simple"></i>
                     <h3>Data Analysis</h3>
                     <p>Intermediate</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
             </div>
 
             <div class="skills-grid" id="eng">
-                <div class="skill-card hidden">
+                <div class="skill-card expandable-card hidden" data-details="Over 3 years of daily use creating detailed architectural layouts, structural designs, and civil engineering schematics with pinpoint precision.">
                     <i class="fa-solid fa-pen-ruler"></i>
                     <h3>AutoCAD</h3>
                     <p>Expert</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
-                <div class="skill-card hidden delay-100">
+                <div class="skill-card expandable-card hidden delay-100" data-details="Building Information Modeling (BIM) for 3D structural rendering, clash detection, and comprehensive project visualization.">
                     <i class="fa-solid fa-building"></i>
                     <h3>Revit</h3>
                     <p>Advanced</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
-                <div class="skill-card hidden delay-200">
+                <div class="skill-card expandable-card hidden delay-200" data-details="Hands-on mastery of Total Station operations, auto-leveling, traversing, and creating highly accurate topographical maps for site preparation.">
                     <i class="fa-solid fa-map-location-dot"></i>
                     <h3>Surveying</h3>
                     <p>Advanced</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
-                <div class="skill-card hidden delay-300">
+                <div class="skill-card expandable-card hidden delay-300" data-details="Conducting detailed material takeoffs, labor cost analysis, and generating comprehensive project budgets from raw blueprints.">
                     <i class="fa-solid fa-calculator"></i>
                     <h3>Cost Estimation</h3>
                     <p>Intermediate</p>
+                    <span class="expand-hint">[Expand]</span>
                 </div>
             </div>
         </div>
@@ -159,20 +170,22 @@
         <div class="container">
             <h2 class="section-title hidden">My <span class="gradient-text">Education</span></h2>
             <div class="timeline">
-                <div class="timeline-item hidden">
+                <div class="timeline-item expandable-card hidden" data-details="Current 6th-semester student at Bhaderwah Campus, University of Jammu. Core subjects include Artificial Intelligence, Free and Open-Source Software, Database Management Systems, and advanced Data Mining methodologies.">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
-                        <span class="timeline-date">Present</span>
+                        <span class="timeline-date">Present (6th Semester)</span>
                         <h3>BCA in Data Science</h3>
                         <p style="color: var(--text-muted);">Focusing on database systems, Python programming, and data mining methodologies.</p>
+                        <span class="expand-hint">[Click to Expand]</span>
                     </div>
                 </div>
-                <div class="timeline-item hidden delay-100">
+                <div class="timeline-item expandable-card hidden delay-100" data-details="Extensive background learning the fundamentals of infrastructure planning, surveying dynamics, AutoCAD design principles, and heavy project management strategies.">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
                         <span class="timeline-date">Past</span>
-                        <h3>Civil Engineering</h3>
+                        <h3>Civil Engineering Foundation</h3>
                         <p style="color: var(--text-muted);">Background in infrastructure planning, AutoCAD design, and project surveying.</p>
+                        <span class="expand-hint">[Click to Expand]</span>
                     </div>
                 </div>
             </div>
@@ -183,7 +196,7 @@
         <div class="container">
             <h2 class="section-title hidden">Professional <span class="gradient-text">Experience</span></h2>
             <div class="projects-grid">
-                <div class="project-card hidden delay-100">
+                <div class="project-card expandable-card hidden delay-100" data-details="Supervised active site operations, managed teams of contractors, and ensured strict compliance with engineering and safety regulations. Successfully reduced material waste and optimized timeline delivery through meticulous planning.">
                     <div class="project-banner"><i class="fa-solid fa-hard-hat"></i></div>
                     <div class="project-info">
                         <span class="company-name">Engineering Sector</span>
@@ -194,9 +207,10 @@
                             <span>Surveying</span>
                             <span>Planning</span>
                         </div>
+                        <span class="expand-hint" style="margin-top: 15px;">[Click to Expand]</span>
                     </div>
                 </div>
-                <div class="project-card hidden delay-200">
+                <div class="project-card expandable-card hidden delay-200" data-details="Transitioned physical engineering skills into the digital space. Analyzed complex datasets, built predictive academic models, and completed an intensive internship focused on Networking Basics at Bhaderwah Campus.">
                     <div class="project-banner"><i class="fa-solid fa-code"></i></div>
                     <div class="project-info">
                         <span class="company-name">Tech Transition</span>
@@ -207,6 +221,7 @@
                             <span>SQL</span>
                             <span>Data Mining</span>
                         </div>
+                        <span class="expand-hint" style="margin-top: 15px;">[Click to Expand]</span>
                     </div>
                 </div>
             </div>
@@ -217,19 +232,27 @@
         <div class="container">
             <h2 class="section-title hidden">Get In <span class="gradient-text">Touch</span></h2>
             <div class="contact-form hidden">
-                <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">I am open to discussions on Data Science internships, engineering consultations, or tech collaborations.</p>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">System ready to receive communications. Open to Data Science internships or engineering collaborations.</p>
                 <div style="text-align: center;">
                     <a href="https://t.me/thebilalnajeeb" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom: 20px; display: block;">Message me on Telegram <i class="fa-brands fa-telegram"></i></a>
                     
-                    <a href="mailto:businesswithbilal@outlook.com" class="btn btn-outline" style="display: block; margin-left: 0;">Send me an Email <i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:ibilalnajeeb@outlook.com" class="btn btn-outline" style="display: block; margin-left: 0;">Send me an Email <i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 30px; border-top: 1px solid var(--border-color); color: var(--text-muted); margin-top: 50px;">
+    <footer style="text-align: center; padding: 30px; border-top: 1px dashed var(--border-color); color: var(--text-muted); margin-top: 50px;">
         <p>&copy; 2025 Bilal Najeeb. All rights reserved.</p>
     </footer>
+
+    <div id="dataModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

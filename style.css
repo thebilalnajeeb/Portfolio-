@@ -20,7 +20,7 @@
     --shadow: 0 4px 20px rgba(0, 200, 83, 0.15);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; cursor: default; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'VT323', monospace; scroll-behavior: smooth; cursor: default; font-size: 1.1rem; }
 
 a, button, .tab-btn, .project-card, .skill-card, .about-card { cursor: pointer; }
 

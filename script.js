@@ -63,7 +63,6 @@ function openTab(evt, tabName) {
     }
     document.getElementById(tabName).style.display = "grid";
     
-    // Re-trigger scroll animations for the new tab
     let hiddenElements = document.getElementById(tabName).querySelectorAll('.hidden');
     hiddenElements.forEach(el => {
         el.classList.remove('show');
@@ -87,47 +86,72 @@ function topFunction() {
     document.documentElement.scrollTop = 0; 
 }
 
-// 5. MODAL SYSTEM LOGIC (Enlarging the Cards)
+// 5. MODAL SYSTEM LOGIC (3D ANIMATED)
 const modal = document.getElementById('dataModal');
 const modalBody = document.getElementById('modalBody');
 const closeBtn = document.querySelector('.close-btn');
 
 document.querySelectorAll('.expandable-card').forEach(card => {
     card.addEventListener('click', function() {
-        // 1. Clone the clicked card's HTML so we don't remove it from the main page
         let clonedContent = this.cloneNode(true);
-        
-        // 2. Remove the extra padding/animations from the clone
         clonedContent.classList.remove('delay-100', 'delay-200', 'delay-300');
         
-        // 3. Get the extra details stored in the HTML data attribute
         let extraDetails = this.getAttribute('data-details');
         
-        // 4. Clear old modal content and add the new stuff
         modalBody.innerHTML = '';
         modalBody.appendChild(clonedContent);
         
-        // 5. If there are extra details, create a new paragraph for them inside the modal
         if (extraDetails) {
             let detailDiv = document.createElement('div');
             detailDiv.className = 'modal-details-text';
-            detailDiv.innerHTML = `<strong>>_ Extended Details:</strong><br><br>${extraDetails}`;
+            // Job-related text replacement
+            detailDiv.innerHTML = `<strong>>_ SYSTEM LOGS:</strong><br>${extraDetails}`;
             modalBody.appendChild(detailDiv);
         }
 
-        // 6. Show the modal!
         modal.classList.add('show');
     });
 });
 
-// Close modal when X is clicked
-closeBtn.onclick = function() { 
-    modal.classList.remove('show'); 
+closeBtn.onclick = function() { modal.classList.remove('show'); }
+window.onclick = function(event) { if (event.target == modal) { modal.classList.remove('show'); } }
+
+// 6. DARK/LIGHT MODE TOGGLE
+const themeBtn = document.getElementById('theme-toggle');
+if (themeBtn) {
+    const icon = themeBtn.querySelector('i');
+    themeBtn.addEventListener('click', () => {
+        if (document.body.getAttribute('data-theme') === 'light') {
+            document.body.removeAttribute('data-theme');
+            icon.className = 'fa-solid fa-sun';
+        } else {
+            document.body.setAttribute('data-theme', 'light');
+            icon.className = 'fa-solid fa-moon';
+        }
+    });
 }
 
-// Close modal when clicking outside the box
-window.onclick = function(event) { 
-    if (event.target == modal) { 
-        modal.classList.remove('show'); 
-    } 
+// 7. MOBILE MENU TOGGLE
+const mobileMenuBtn = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Change icon from hamburger to X
+        const icon = mobileMenuBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.className = 'fa-solid fa-xmark';
+        } else {
+            icon.className = 'fa-solid fa-bars';
+        }
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars';
+        });
+    });
 }

@@ -1,15 +1,4 @@
-// 1. Loading Screen Logic (Preloader)
-// Start the timer immediately instead of waiting for slow internet connections
-setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    preloader.style.opacity = '0'; // Fades out smoothly to reveal the site
-    setTimeout(() => {
-        preloader.style.display = 'none'; // Completely removes the black screen
-    }, 500);
-}, 2500); 
-
-
-// 2. Scroll Reveal Animation Logic
+// 1. Scroll Reveal Animation Logic
 const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -24,7 +13,7 @@ document.querySelectorAll('.hidden').forEach((el) => {
     observer.observe(el);
 });
 
-// 3. Typewriter Effect Logic
+// 2. Typewriter Effect Logic
 const words = ["Data Science Student.", "Civil Engineer.", "Problem Solver."];
 let i = 0;
 let timer;
@@ -60,7 +49,7 @@ function deletingEffect() {
 };
 typingEffect(); // Start effect
 
-// 4. Tab Switching Logic for Skills
+// 3. Tab Switching Logic for Skills
 function openTab(evt, tabName) {
     let i, grid, tablinks;
     grid = document.getElementsByClassName("skills-grid");
@@ -84,7 +73,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-// 5. Back to Top Button
+// 4. Back to Top Button
 let mybutton = document.getElementById("scrollTopBtn");
 window.onscroll = function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -98,7 +87,7 @@ function topFunction() {
     document.documentElement.scrollTop = 0; 
 }
 
-// 6. MODAL SYSTEM LOGIC (Enlarging the Cards)
+// 5. MODAL SYSTEM LOGIC (Enlarging the Cards)
 const modal = document.getElementById('dataModal');
 const modalBody = document.getElementById('modalBody');
 const closeBtn = document.querySelector('.close-btn');

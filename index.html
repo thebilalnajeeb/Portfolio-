@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilal Najeeb | Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">Bilal <span class="gradient-text">Najeeb</span></div>
+            <div style="display: flex; align-items: center;">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#work">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="margin-left: 20px;">Hire Me</a>
+                <button class="theme-btn" id="theme-toggle" title="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="social-sidebar">
+        <a href="https://linkedin.com/in/bilalnajeeb" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://t.me/thebilalnajeeb" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <div class="social-line"></div>
+    </div>
+
+    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <div class="hero">
+        <div class="container hidden">
+            <div class="badge">✨ Open to Data Science & Engineering Roles</div>
+            <h1>Bilal <span class="gradient-text">Najeeb</span></h1>
+            <h2>> <span class="typewriter" id="typewriter"></span><span style="animation: blink 1s infinite">|</span></h2>
+            <p>
+                Bridging the gap between <strong>Civil Engineering</strong> and <strong>Data Science</strong>. 
+                I utilize my background in project planning, surveying, and management to build data-driven solutions.
+            </p>
+            <div>
+                <a href="https://1drv.ms/b/c/3941138d7b325c85/IQBYskzPAWlIQopWIXCIHjiDAX731H5NcZMNhP034np_PMg" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download CV <i class="fa-solid fa-download"></i></a>
+                <a href="#about" class="btn btn-outline">About Me <i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="marquee-text">DATA SCIENCE • CIVIL ENGINEERING • PYTHON • AUTOCAD • PLANNING • MACHINE LEARNING • </span>
+            <span class="marquee-text">DATA SCIENCE • CIVIL ENGINEERING • PYTHON • AUTOCAD • PLANNING • MACHINE LEARNING • </span>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="hidden">
+                    <img src="https://www.skyweaver.net/images/media/wallpapers/wallpaper2.jpg" alt="Bilal Najeeb" class="about-img" style="min-height: 400px; object-fit: cover; background: #2d1b4e;">
+                </div>
+                <div>
+                    <h2 class="section-title hidden" style="text-align: left;">About <span class="gradient-text">Me</span></h2>
+                    
+                    <p class="hidden delay-100" style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.8;">
+                        I am currently a <strong>BCA Data Science Student</strong> with over 3 years of professional experience in Civil Engineering. 
+                        My unique journey allows me to understand both the physical infrastructure of the world and the digital data that powers it.
+                    </p>
+                    
+                    <div class="about-card hidden delay-200">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <div>
+                            <h4>Full Stack Data Science</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Python, Machine Learning, Data Analysis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-card hidden delay-300">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                        <div>
+                            <h4>Engineering & Planning</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">AutoCAD, Surveying, Cost Estimation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title hidden">Technical <span class="gradient-text">Proficiency</span></h2>
+            
+            <div class="tabs hidden">
+                <button class="tab-btn active" onclick="openTab(event, 'ds')">Data Science</button>
+                <button class="tab-btn" onclick="openTab(event, 'eng')">Engineering</button>
+            </div>
+
+            <div class="skills-grid active" id="ds">
+                <div class="skill-card hidden delay-100">
+                    <i class="fa-brands fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Advanced</p>
+                </div>
+                <div class="skill-card hidden delay-200">
+                    <i class="fa-solid fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Intermediate</p>
+                </div>
+                <div class="skill-card hidden delay-300">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Data Mining</h3>
+                    <p>Academic Focus</p>
+                </div>
+                <div class="skill-card hidden delay-100">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <h3>Data Analysis</h3>
+                    <p>Intermediate</p>
+                </div>
+            </div>
+
+            <div class="skills-grid" id="eng">
+                <div class="skill-card hidden">
+                    <i class="fa-solid fa-pen-ruler"></i>
+                    <h3>AutoCAD</h3>
+                    <p>Expert</p>
+                </div>
+                <div class="skill-card hidden delay-100">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Revit</h3>
+                    <p>Advanced</p>
+                </div>
+                <div class="skill-card hidden delay-200">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h3>Surveying</h3>
+                    <p>Advanced</p>
+                </div>
+                <div class="skill-card hidden delay-300">
+                    <i class="fa-solid fa-calculator"></i>
+                    <h3>Cost Estimation</h3>
+                    <p>Intermediate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title hidden">My <span class="gradient-text">Education</span></h2>
+            <div class="timeline">
+                <div class="timeline-item hidden">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">Present</span>
+                        <h3>BCA in Data Science</h3>
+                        <p style="color: var(--text-muted);">Focusing on database systems, Python programming, and data mining methodologies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item hidden delay-100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">Past</span>
+                        <h3>Civil Engineering</h3>
+                        <p style="color: var(--text-muted);">Background in infrastructure planning, AutoCAD design, and project surveying.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="container">
+            <h2 class="section-title hidden">Professional <span class="gradient-text">Experience</span></h2>
+            <div class="projects-grid">
+                <div class="project-card hidden delay-100">
+                    <div class="project-banner"><i class="fa-solid fa-hard-hat"></i></div>
+                    <div class="project-info">
+                        <span class="company-name">Engineering Sector</span>
+                        <h3 class="job-role">Civil Engineer</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Over 3 years of hands-on experience in surveying, project estimation, and layout planning.</p>
+                        <div class="tags">
+                            <span>AutoCAD</span>
+                            <span>Surveying</span>
+                            <span>Planning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card hidden delay-200">
+                    <div class="project-banner"><i class="fa-solid fa-code"></i></div>
+                    <div class="project-info">
+                        <span class="company-name">Tech Transition</span>
+                        <h3 class="job-role">Data Science Projects</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Applying analytical models to structured data, focusing on network analysis and database design.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Data Mining</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title hidden">Get In <span class="gradient-text">Touch</span></h2>
+            <div class="contact-form hidden">
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">I am open to discussions on Data Science internships, engineering consultations, or tech collaborations.</p>
+                <div style="text-align: center;">
+                    <a href="https://t.me/thebilalnajeeb" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom: 20px; display: block;">Message me on Telegram <i class="fa-brands fa-telegram"></i></a>
+                    
+                    <a href="mailto:businesswithbilal@outlook.com" class="btn btn-outline" style="display: block; margin-left: 0;">Send me an Email <i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 30px; border-top: 1px solid var(--border-color); color: var(--text-muted); margin-top: 50px;">
+        <p>&copy; 2025 Bilal Najeeb. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
